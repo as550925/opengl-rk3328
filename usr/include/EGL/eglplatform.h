@@ -67,15 +67,12 @@
  * implementations.
  */
 
-#include <stdint.h>
-#include "mali_fbdev_types.h"
+struct gbm_device;
+struct gbm_surface;
 
-typedef fbdev_window * EGLNativeWindowType;
-
-typedef int32_t EGLNativePixmapType;
-
-
-typedef void * EGLNativeDisplayType;
+typedef struct gbm_device * EGLNativeDisplayType;
+typedef struct gbm_surface * EGLNativeWindowType;
+typedef void * EGLNativePixmapType;
 
 /* EGL 1.2 types, renamed for consistency in EGL 1.3 */
 typedef EGLNativeDisplayType NativeDisplayType;
@@ -90,7 +87,7 @@ typedef EGLNativeWindowType  NativeWindowType;
  * handles are 64 bit types, then EGLint should be defined as a signed 64-bit
  * integer type.
  */
-typedef int32_t EGLint;
+typedef khronos_int32_t EGLint;
 
 
 /* C++ / C typecast macros for special EGL handle values */
